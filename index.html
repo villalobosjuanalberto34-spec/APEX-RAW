@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Apex Raw</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span>APEX</span> RAW
+    </div>
+
+    <button id="publishNav">
+        Publicar
+    </button>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="tag">
+            SCRIPT HOST
+        </div>
+
+        <h1>
+            Apex Raw
+        </h1>
+
+        <p>
+            Publica tus scripts y obtén una URL Raw
+            para compartirlos.
+        </p>
+
+    </section>
+
+
+    <!-- PUBLICAR -->
+
+    <section
+        class="card"
+        id="publishSection"
+    >
+
+        <h2>
+            Publicar Script
+        </h2>
+
+        <p class="sub">
+            Pega tu código completo y genera tu URL.
+        </p>
+
+
+        <label>
+            Nombre del script
+        </label>
+
+        <input
+            id="name"
+            type="text"
+            maxlength="80"
+            placeholder="Mi Script"
+        >
+
+
+        <label>
+            Descripción
+        </label>
+
+        <input
+            id="description"
+            type="text"
+            maxlength="200"
+            placeholder="Descripción opcional"
+        >
+
+
+        <label>
+            Código
+        </label>
+
+        <textarea
+            id="code"
+            class="codeInput"
+            spellcheck="false"
+            placeholder="Pega aquí tu código completo..."
+        ></textarea>
+
+
+        <button
+            id="publish"
+            class="primary"
+        >
+            Publicar Script
+        </button>
+
+
+        <div
+            id="publishResult"
+            class="result hidden"
+        >
+
+            <div class="success">
+                Script publicado correctamente
+            </div>
+
+
+            <label>
+                URL Raw
+            </label>
+
+            <div class="copyRow">
+
+                <input
+                    id="rawUrl"
+                    readonly
+                >
+
+                <button id="copyRaw">
+                    Copiar
+                </button>
+
+            </div>
+
+
+            <label>
+                Loadstring
+            </label>
+
+            <div class="copyRow">
+
+                <input
+                    id="loadstring"
+                    readonly
+                >
+
+                <button id="copyLoadstring">
+                    Copiar
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VER CÓDIGO -->
+
+    <section class="card">
+
+        <h2>
+            Ver Código
+        </h2>
+
+        <p class="sub">
+            Pega una URL Raw de Apex Raw, GitHub o Pastebin.
+        </p>
+
+
+        <div class="urlRow">
+
+            <input
+                id="url"
+                type="url"
+                placeholder="https://..."
+            >
+
+            <button
+                id="view"
+                class="primary small"
+            >
+                Ver
+            </button>
+
+        </div>
+
+
+        <div
+            id="error"
+            class="error"
+        ></div>
+
+    </section>
+
+
+    <!-- VISOR -->
+
+    <section
+        id="viewer"
+        class="viewer hidden"
+    >
+
+        <div class="viewerTop">
+
+            <div>
+
+                <strong id="viewerName">
+                    Código
+                </strong>
+
+                <span id="viewerInfo">
+                    RAW
+                </span>
+
+            </div>
+
+            <button id="copyCode">
+                Copiar
+            </button>
+
+        </div>
+
+
+        <pre><code id="viewerCode"></code></pre>
+
+    </section>
+
+</main>
+
+
+<div
+    id="toast"
+    class="toast"
+>
+    Copiado
+</div>
+
+
+<footer>
+    Apex Raw © 2026
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

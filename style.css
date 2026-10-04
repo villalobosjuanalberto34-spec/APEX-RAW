@@ -1,0 +1,518 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #08090c;
+    --card: #111318;
+    --card2: #171a21;
+    --border: #292e38;
+    --text: #ffffff;
+    --muted: #8c94a2;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        sans-serif;
+
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+header {
+    height: 68px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 10;
+
+    background: rgba(8, 9, 12, .92);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(18px);
+}
+
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.logo span {
+    background: white;
+    color: black;
+
+    padding: 5px 7px;
+
+    border-radius: 7px;
+
+    margin-right: 5px;
+
+    font-size: 12px;
+}
+
+
+header button {
+    background: white;
+    color: black;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    padding: 10px 15px;
+
+    font-weight: 800;
+}
+
+
+/* MAIN */
+
+main {
+    width: min(
+        900px,
+        calc(100% - 28px)
+    );
+
+    margin: auto;
+}
+
+
+/* HERO */
+
+.hero {
+    padding: 65px 0 45px;
+}
+
+
+.tag {
+    display: inline-block;
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    border-radius: 100px;
+
+    padding: 7px 11px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+
+.hero h1 {
+    font-size: clamp(
+        48px,
+        13vw,
+        82px
+    );
+
+    letter-spacing: -4px;
+
+    line-height: .95;
+
+    margin-bottom: 18px;
+}
+
+
+.hero p {
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    max-width: 550px;
+}
+
+
+/* CARD */
+
+.card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.card h2 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+
+.sub {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+
+    color: #c9ced7;
+
+    font-size: 12px;
+
+    margin: 13px 0 7px;
+}
+
+
+input,
+textarea {
+    width: 100%;
+
+    background: var(--card2);
+
+    color: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+input {
+    height: 47px;
+
+    padding: 0 13px;
+}
+
+
+textarea {
+    padding: 13px;
+
+    resize: vertical;
+}
+
+
+input:focus,
+textarea:focus {
+    border-color: #697180;
+}
+
+
+.codeInput {
+    min-height: 330px;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* BUTTONS */
+
+button {
+    cursor: pointer;
+}
+
+
+.primary {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 14px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: black;
+
+    font-weight: 800;
+}
+
+
+.primary:disabled {
+    opacity: .5;
+
+    cursor: wait;
+}
+
+
+.small {
+    width: auto;
+
+    padding: 0 18px;
+
+    margin-top: 0;
+}
+
+
+/* RESULT */
+
+.result {
+    margin-top: 18px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.success {
+    color: #75e6a0;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.copyRow,
+.urlRow {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.copyRow button {
+    border: 1px solid var(--border);
+
+    background: var(--card2);
+
+    color: white;
+
+    border-radius: 10px;
+
+    padding: 0 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* ERROR */
+
+.error {
+    color: #ff7070;
+
+    font-size: 12px;
+
+    margin-top: 10px;
+}
+
+
+/* VIEWER */
+
+.viewer {
+    background: #06070a;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+}
+
+
+.viewerTop {
+    min-height: 58px;
+
+    padding: 12px 15px;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.viewerTop strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.viewerTop span {
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+.viewerTop button {
+    background: var(--card2);
+
+    color: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding: 8px 11px;
+}
+
+
+pre {
+    padding: 18px;
+
+    overflow-x: auto;
+
+    max-height: 650px;
+}
+
+
+code {
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    white-space: pre;
+}
+
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    background: white;
+
+    color: black;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .2s;
+
+    z-index: 100;
+}
+
+
+.toast.show {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    padding: 30px;
+}
+
+
+/* HIDDEN */
+
+.hidden {
+    display: none;
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding-top: 48px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .urlRow {
+        flex-direction: column;
+    }
+
+    .small {
+        width: 100%;
+    }
+
+    .copyRow {
+        flex-direction: column;
+    }
+
+    .copyRow button {
+        height: 43px;
+    }
+
+}
